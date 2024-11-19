@@ -1,0 +1,69 @@
+## Domain
+### Semiconductor manufacturing process
+## Business Context
+#### A complex modern semiconductor manufacturing process is normally under constant
+#### surveillance via the monitoring of signals/variables collected from sensors and or
+#### process measurement points. However, not all of these signals are equally valuable in
+#### a specific monitoring system.
+#### The measured signals contain a combination of useful information, irrelevant
+#### information as well as noise. Engineers typically have a much larger number of signals
+#### than are actually required. If we consider each type of signal as a feature, then feature
+#### selection may be applied to identify the most relevant signals. The Process Engineers
+#### may then use these signals to determine key factors contributing to yield excursions
+#### downstream in the process. This will enable an increase in process throughput,
+#### decreased time to learning and reduce the per unit production costs.
+#### These signals can be used as features to predict the yield type. And by analyzing and
+#### trying out different combinations of features, essential signals that are impacting the
+#### yield type can be identified.
+
+## Objective
+#### We will build a classifier to predict the Pass/Fail yield of a particular process entity and
+#### analyze whether all the features are required to build the model or not.
+
+## Dataset description 
+
+#### sensor-data.csv : (1567, 592)
+#### The data consists of 1567 examples each with 591 features.
+#### The dataset presented in this case represents a selection of such features where each
+#### example represents a single production entity with associated measured
+#### features and the labels represent a simple pass/fail yield for in house line
+#### testing. Target column “ –1” corresponds to a pass and “1” corresponds to a fail and
+#### the data time stamp is for that specific test point.
+
+## Steps
+1. Import the necessary liberraries and read the provided CSV as a dataframe and
+perform the below steps. 
+a. Check a few observations and shape of the dataframe
+b. Check for missing values. Impute the missing values if there is any
+c. Univariate analysis - check frequency count of target column and
+distribution of the first few features (sensors)
+d. Perform bivariate analysis and check for the correlation
+e. Drop irrelevant columns
+2. Standardize the data 
+3. Segregate the dependent column ("Pass/Fail") from the data frame. And split
+the dataset into training and testing set ( 70:30 split) 
+4. Build a logistic regression, random forest, and xgboost classifier model and print
+confusion matrix for the test data 
+5. Apply sampling techniques to handle the imbalanced classes 
+6. Build a logistic regression, random forest, and xgboost classifier model after resampling the data and print the confusion matrix for the test data 
+7. Apply Grid Search CV to get the best hyper parameters for any one of the above
+model 
+8. Build a classifier model using the above best hyper parameters and check the
+accuracy and confusion matrix 
+9. Report feature importance and mention your comments 
+
+10. Report your findings and inferences 
+Further Questions ( Optional) -
+1. Check for outliers and impute them as required.
+2. Apply PCA to get rid of redundant features and reduce dimension of the data
+3. Try cross validation techniques to get better results
+4. Try OneCLassSVM model to get better recall
+
+### Learning Outcomes
+* Feature Importance
+* Sampling
+* SMOTE
+* Grid Search
+* Random Forest
+* Exploratory Data Analysis
+* Logistic Regression
